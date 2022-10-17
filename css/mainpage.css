@@ -1,0 +1,128 @@
+body, html
+{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    background-color: black;
+}
+p{
+    margin-right:10px;
+}
+.header {      
+    background-color: #fdfdfd;                 
+    display:flex;
+    padding: 10px;
+    margin:0 auto;
+    margin-bottom:10px;
+}
+.column-header {
+    display:inline-flex;
+    min-height: 35px;
+    padding:10px;   
+}
+.registration
+{
+display:flex;
+align-items: top;
+justify-content: center;
+min-height: 35px;
+padding:10px;
+color:white;
+}
+.account
+{
+    display:inline-block;
+}
+.account img
+{
+    margin-left:2px;
+}
+.logo img   
+{
+    margin-right:20px;
+    height:100px;
+}
+.cover img
+{
+    height:150px;
+    width:150px;
+    margin:5%;
+}
+.release
+{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display:inline-block;
+    width: 200px;
+    min-height:200px;
+    margin:20px;
+    text-align:center;
+    background:#c6dfe4;
+    color:black;
+}
+
+.cover-album img
+{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height:300px;
+    width: 300px;
+}
+
+.content
+{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: whitesmoke;
+    justify-content: center;
+}
+.info
+{
+margin:0 auto;
+display:block;
+align-items: center;
+justify-content: center;
+}
+.artist
+{
+}
+.name
+{
+}
+.player{
+    float:none;
+    min-height:200px;
+}
+.positioner {
+    width:90%;
+    border:0;
+    margin: 0 auto;
+}
+.link_logout
+{
+    text-align: center;
+}
+.menu
+{
+    width:100%; 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.info-album
+{
+    display:flex;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    width:40%;
+}
+.info-songs
+{
+    align-items: center;
+    justify-content: left;
+    width:50%;
+}
+.songs
+{
+    width:70%;
+}
