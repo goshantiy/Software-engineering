@@ -28,8 +28,8 @@ session_start();
         {
         	// экранирования символов для mysql
         $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link)); 
-        $login = htmlentities(mysqli_real_escape_string($link, $_POST['form-login-name']));
-		$password = htmlentities(mysqli_real_escape_string($link, $_POST['form-password']));
+        $login = htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-login-name']));
+		$password = htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-password']));
         $query ="SELECT * FROM user WHERE `user_login`='$login' AND `password` = '$password'";
         $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));	
         if(mysqli_num_rows($result) > 0 && $result)
@@ -38,7 +38,6 @@ session_start();
                 $_SESSION['user_id']=$res[0];   
                 $_SESSION['role']=$res[5];
                 $_SESSION['login'] = $login;
-                $_SESSION['password'] = $password;
                 header('Location:/created/index.php');
             }
         else

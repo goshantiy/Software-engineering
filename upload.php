@@ -37,9 +37,9 @@ if(isset($data['btn_submit_song']))
 
 
   $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка sql connection" . mysqli_error($link)); 
-  $author = htmlspecialchars(htmlentities(mysqli_real_escape_string($link, $_POST['form-author'])));
-  $release_name = htmlspecialchars(htmlentities(mysqli_real_escape_string($link,$_POST['form-release-name'])));
-  $song_name = htmlspecialchars(htmlentities(mysqli_real_escape_string($link,$songName)));
+  $author = htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-author']));
+  $release_name = htmlspecialchars(mysqli_real_escape_string($link,$_POST['form-release-name']));
+  $song_name = htmlspecialchars(mysqli_real_escape_string($link,$songName));
     
      if(empty($errors))
     {
