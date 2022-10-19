@@ -6,13 +6,13 @@ session_start();
 <head>
     <title>music</title>
     <link rel=" icon" type="image/x-icon" href="/created/images/favicon.ico">
-    <script src="/created/playerjs.js" type="text/javascript"></script>
+    <!--<script src="/created/playerjs.js" type="text/javascript"></script>-->
     <link rel="stylesheet" href="/created/css/mainpage.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&display=swap" rel="stylesheet">
     <meta charset="utf-8">
-    <script src="//site.com/playerjs.js" type="text/javascript"></script>
+    <!--<script src="//site.com/playerjs.js" type="text/javascript"></script>-->
 </head>
 <div class="header">
     <div class="column-header positioner">
