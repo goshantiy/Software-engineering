@@ -45,7 +45,7 @@ if(isset($data['btn_submit_song']))
     {
       $song_path=htmlspecialchars($uploaddir.$songName);
       $id=$_SESSION['user_id'];
-      $query ="INSERT INTO content VALUES('$id', NULL ,'$author','$release_name','$song_name', NULL, '$song_path')";
+      $query ="INSERT INTO content VALUES('$id', NULL ,'$author','$release_name','$song_name', '/created/default/default_cover.png', '$song_path')";
       	$result = mysqli_query($link, $query) or die("Ошибка sql query" . mysqli_error($link)); 
         if($result)
         {
