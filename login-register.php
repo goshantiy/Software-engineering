@@ -42,10 +42,10 @@
 
 		$link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link)); 
 		// экранирования символов для mysql
-		$name = htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-name']));
-		$login = htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-login-name']));
-		$password = htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-password']));
-		$email = htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-email']));
+		$name = strip_tags(htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-name'])));
+		$login = strip_tags(htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-login-name'])));
+		$password = strip_tags(htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-password'])));
+		$email = strip_tags(htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-email'])));
 		//$session_key = $sessionid;
 		$query ="SELECT `user_login` FROM user WHERE `user_login`='$login'";
 		$result = mysqli_query($link, $query);	

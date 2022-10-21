@@ -22,7 +22,7 @@ if(isset($data['btn_submit_song']))
     }
     if (empty($errors))
   {
-    $author = htmlspecialchars($_POST["form-author"]);
+    $author = strip_tags(htmlspecialchars($_POST["form-author"]));
     $uploaddir = "/music/author/".$author.'/';
     if (!is_dir("C:/xampp/htdocs".$uploaddir)) {
             mkdir("C:/xampp/htdocs/created" . $uploaddir, 0777, true);
@@ -30,8 +30,7 @@ if(isset($data['btn_submit_song']))
         $allowedTypes = array("audio/mpeg3","audio/x-mpeg-3","audio/mpeg");
     if (!in_array($_FILES["form-song"]["type"], $allowedTypes))
     {
-      echo $_FILES["form-song"]["type"];
-      $errors[]="Ошибка неверный тип";
+      $errors[]="Ошибка неверный тип ".$_FILES["form-song"]["type"];
     }
     $songName=$_FILES['form-song']['name'];    
     if(!move_uploaded_file($_FILES["form-song"]["tmp_name"],"C:/xampp/htdocs/created".$uploaddir.$songName))
@@ -42,13 +41,13 @@ if(isset($data['btn_submit_song']))
 
 
   $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка sql connection" . mysqli_error($link)); 
-  $author = htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-author']));
-  $release_name = htmlspecialchars(mysqli_real_escape_string($link,$_POST['form-release-name']));
-  $song_name = htmlspecialchars(mysqli_real_escape_string($link,$songName));
+  $author = strip_tags(htmlspecialchars(mysqli_real_escape_string($link, $_POST['form-author'])));
+  $release_name = strip_tags(htmlspecialchars(mysqli_real_escape_string($link,$_POST['form-release-name'])));
+  $song_name = strip_tags(htmlspecialchars(mysqli_real_escape_string($link,$songName)));
     
      if(empty($errors))
     {
-      $song_path=htmlspecialchars($uploaddir.$songName);
+      $song_path=strip_tags(htmlspecialchars($uploaddir.$songName));
       $id=$_SESSION['user_id'];
       $query ="INSERT INTO content VALUES('$id', NULL ,'$author','$release_name','$song_name', 'default/default_cover.png', '$song_path')";
       	$result = mysqli_query($link, $query) or die("Ошибка sql query" . mysqli_error($link)); 
