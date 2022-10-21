@@ -24,7 +24,7 @@ if(isset($data['btn_submit_song']))
   {
     $author = strip_tags(htmlspecialchars($_POST["form-author"]));
     $uploaddir = "/music/author/".$author.'/';
-    if (!is_dir("C:/xampp/htdocs".$uploaddir)) {
+    if (!file_exists("C:/xampp/htdocs/created".$uploaddir)) {
             mkdir("C:/xampp/htdocs/created" . $uploaddir, 0777, true);
         }
         $allowedTypes = array("audio/mpeg3","audio/x-mpeg-3","audio/mpeg");
@@ -33,7 +33,7 @@ if(isset($data['btn_submit_song']))
       $errors[]="Ошибка неверный тип ".$_FILES["form-song"]["type"];
     }
     $songName=$_FILES['form-song']['name'];    
-    if(!move_uploaded_file($_FILES["form-song"]["tmp_name"],"C:/xampp/htdocs/created".$uploaddir.$songName))
+    if(empty($errors)&&!move_uploaded_file($_FILES["form-song"]["tmp_name"],"C:/xampp/htdocs/created".$uploaddir.$songName))
     {
     print_r($_FILES['form-song']['name']);
       $errors[]= "Ошибка move song";
