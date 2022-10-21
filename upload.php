@@ -10,25 +10,30 @@ if(isset($data['btn_submit_song']))
   if(trim($data['form-author']) == '') {  
     $errors[] = "Введите автора!";
   }
-  if(trim($data['form-release-name']) == '')
-    $errors[] = "Введите название песни!";
-    if(trim($data['form-release-name']) == '')
-    $errors[] = "Введите название релиза!";
-  if(!isset($_FILES['form-song']))
-  $errors[] = "Выберите песню!";
-  if (empty($errors))
+  if (trim($data['form-release-name']) == '') {
+        $errors[] = "Введите название песни!";
+    }
+    if(trim($data['form-release-name']) == '') {
+        $errors[] = "Введите название релиза!";
+    }
+    if (!file_exists($_FILES['form-song']['tmp_name']) || !is_uploaded_file($_FILES['form-song']['tmp_name'])) 
+    {
+      $errors[] = "Выберите песню!";
+    }
+    if (empty($errors))
   {
-    $uploaddir = "/created/music/author/".$_POST["form-author"].'/';
-    if(!is_dir($uploaddir))
-    mkdir("C:/xampp/htdocs".$uploaddir,0777,true);
-    $allowedTypes = array("audio/mpeg3","audio/x-mpeg-3","audio/mpeg");
+    $author = htmlspecialchars($_POST["form-author"]);
+    $uploaddir = "/created/music/author/".$author.'/';
+    if (!is_dir("C:/xampp/htdocs".$uploaddir)) {
+            mkdir("C:/xampp/htdocs" . $uploaddir, 0777, true);
+        }
+        $allowedTypes = array("audio/mpeg3","audio/x-mpeg-3","audio/mpeg");
     if (!in_array($_FILES["form-song"]["type"], $allowedTypes))
     {
       echo $_FILES["form-song"]["type"];
       $errors[]="Ошибка неверный тип";
     }
     $songName=$_FILES['form-song']['name'];    
-    echo $_FILES["form-song"]["tmp_name"];
     if(!move_uploaded_file($_FILES["form-song"]["tmp_name"],"C:/xampp/htdocs".$uploaddir.$songName))
     {
     print_r($_FILES['form-song']['name']);
