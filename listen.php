@@ -2,7 +2,7 @@
 include "header.php";
 include 'bdconnect.php';
 if(!isset($_SESSION['role']))
-header('Location:/created/auth.php');
+header('Location:/auth.php');
 $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link)); 
 $NAME = $_GET['release'];
 $query ="SELECT * FROM `content` WHERE release_name LIKE '$NAME'";

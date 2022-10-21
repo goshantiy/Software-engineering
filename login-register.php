@@ -82,7 +82,7 @@
 	<!-- Stylesheets
 	============================================= -->
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/created/css/reg.css" type="text/css">
+	<link rel="stylesheet" href="/css/reg.css" type="text/css">
 	<!-- Document Title
 	============================================= -->
 	<title>Регистрация пользователя</title>
@@ -135,7 +135,7 @@
 									<button class="btn btn-dark m-0" id="btn_registr_form" name="btn_registr_form" value="register">Submit</button>
 								</div>
 								</form>		
-		<p class=center>Already have account? <a href=/created/auth.php>Authorization</a></p>
+		<p class=center>Already have account? <a href=/auth.php>Authorization</a></p>
 </div>
 </body>
 </html>

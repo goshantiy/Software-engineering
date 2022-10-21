@@ -2,7 +2,7 @@
 include 'bdconnect.php';
 include 'header.php';
 if($_SESSION['role']!=3)
-header('Location:/created/index.php');
+header('Location:/index.php');
 $data=$_POST;
 
 if(isset($data['btn_submit_song']))
@@ -23,9 +23,9 @@ if(isset($data['btn_submit_song']))
     if (empty($errors))
   {
     $author = htmlspecialchars($_POST["form-author"]);
-    $uploaddir = "/created/music/author/".$author.'/';
+    $uploaddir = "/music/author/".$author.'/';
     if (!is_dir("C:/xampp/htdocs".$uploaddir)) {
-            mkdir("C:/xampp/htdocs" . $uploaddir, 0777, true);
+            mkdir("C:/xampp/htdocs/created" . $uploaddir, 0777, true);
         }
         $allowedTypes = array("audio/mpeg3","audio/x-mpeg-3","audio/mpeg");
     if (!in_array($_FILES["form-song"]["type"], $allowedTypes))
@@ -34,7 +34,7 @@ if(isset($data['btn_submit_song']))
       $errors[]="Ошибка неверный тип";
     }
     $songName=$_FILES['form-song']['name'];    
-    if(!move_uploaded_file($_FILES["form-song"]["tmp_name"],"C:/xampp/htdocs".$uploaddir.$songName))
+    if(!move_uploaded_file($_FILES["form-song"]["tmp_name"],"C:/xampp/htdocs/created".$uploaddir.$songName))
     {
     print_r($_FILES['form-song']['name']);
       $errors[]= "Ошибка move song";
@@ -50,7 +50,7 @@ if(isset($data['btn_submit_song']))
     {
       $song_path=htmlspecialchars($uploaddir.$songName);
       $id=$_SESSION['user_id'];
-      $query ="INSERT INTO content VALUES('$id', NULL ,'$author','$release_name','$song_name', '/created/default/default_cover.png', '$song_path')";
+      $query ="INSERT INTO content VALUES('$id', NULL ,'$author','$release_name','$song_name', 'default/default_cover.png', '$song_path')";
       	$result = mysqli_query($link, $query) or die("Ошибка sql query" . mysqli_error($link)); 
         if($result)
         {
@@ -68,7 +68,7 @@ if(isset($data['btn_submit_song']))
 <!DOCTYPE html>
 <html>
  <head>
- <link rel="stylesheet" href="/created/css/reg.css" type="text/css">
+ <link rel="stylesheet" href="/css/reg.css" type="text/css">
   <meta charset="utf-8">
   <title>Отправка файла на сервер</title>
  </head>

@@ -38,7 +38,7 @@ session_start();
                 $_SESSION['user_id']=$res[0];   
                 $_SESSION['role']=$res[5];
                 $_SESSION['login'] = $login;
-                header('Location:/created/index.php');
+                header('Location:/index.php');
             }
         else
         {
@@ -60,7 +60,7 @@ session_start();
 	<!-- Stylesheets
 	============================================= -->
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/created/css/reg.css" type="text/css">
+	<link rel="stylesheet" href="/css/reg.css" type="text/css">
 	<!-- Document Title
 	============================================= -->
 	<title>Вход</title>
@@ -90,7 +90,7 @@ session_start();
         </div>
         </div>                
         </form>  
-        <p class="center">Not registered yet?<a href=/created/login-register.php>Registration</a></p> 
+        <p class="center">Not registered yet?<a href=/login-register.php>Registration</a></p> 
         </div>
 </body>
 </html>
