@@ -74,16 +74,16 @@ session_start();
         <div class = left>
             <div class="col-6 form-group">
             <p class=form-login>Login:</p>
-            <input type="text" id="form-login-name" name="form-login-name" value="" class="form-control" placeholder="User"/>
+            <input type="text" id="form-login-name" name="form-login-name" value="" class="form-control" placeholder="User" required/>
             </div>
             <div class="col-6 form-group">
             <p class=form-password>Password:</p>
-            <input type="password" id="form-password" name="form-password" value="" class="form-control" />
+            <input type="password" id="form-password" name="form-password" value="" class="form-control" required/>
             </div>
             <div class="col-6 form-group">
             <p class=form-password>Captcha:</p>
             <div class=center> <img src="captcha.php"/></div>  
-            <input class="center" type="text" id="captcha" name="captcha" placeholder="Captcha" class="form-control" />
+            <input class="center" type="text" id="captcha" name="captcha" placeholder="Captcha" class="form-control" required/>
             </div>   
         <div class=" center form-group">
         <button class="btn btn-dark m-0" id="btn_login_form" name="btn_login_form" value="Login">Вход</button>

@@ -101,34 +101,34 @@
 <div class="left">
 								<div class="col-6 form-group">
 									<p>Full name:</p>
-									<input type="text" id="form-name" name="form-name" value="" class="form-control" placeholder="Иванов Иван Иванович"/>
+									<input type="text" id="form-name" name="form-name" value="" class="form-control" placeholder="Иванов Иван Иванович" required/>
 								</div>
 
 								<div class="col-6 form-group">
 									<p>Mail:</p>
-									<input type="text" id="form-email" name="form-email" value="" class="form-control" placeholder="Example@mail.ru"/>
+									<input type="text" id="form-email" name="form-email" value="" class="form-control" placeholder="Example@mail.ru" required/>
 								</div>
 
 								<div class="col-6 form-group">
 									<p>Login:</p>
-									<input type="text" id="form-login-name" name="form-login-name" value="" class="form-control" placeholder="User"/>
+									<input type="text" id="form-login-name" name="form-login-name" value="" class="form-control" placeholder="User" required/>
 								</div>
 </div>
 <div class="right">
 								<div class="col-6 form-group">
 									<p>Confirm mail:</p>
-									<input type="text" id="formemailpass" name="formemailpass" value="" class="form-control" placeholder="Example@mail.ru" />
+									<input type="text" id="formemailpass" name="formemailpass" value="" class="form-control" placeholder="Example@mail.ru" required/>
 								</div>
 
 
 								<div class="col-6 form-group">
 									<p>Password:</p>
-									<input type="password" id="form-password" name="form-password" value="" class="form-control" />
+									<input type="password" id="form-password" name="form-password" value="" class="form-control" required/>
 								</div>
 
 								<div class="col-6 form-group">
 									<p>Confirm password:</p>
-									<input type="password" id="form-password-pass" name="form-password-pass" value="" class="form-control"  />
+									<input type="password" id="form-password-pass" name="form-password-pass" value="" class="form-control" required />
 								</div>
 </div>
 								<div class="col-12 center">
