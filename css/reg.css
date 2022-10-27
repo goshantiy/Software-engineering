@@ -6,13 +6,18 @@ body
 }
 .positioner {
     width:90%;
-    /*border:10px solid green;*/
     margin: 0 auto;
     border-radius: 25px;
 }
+.positioner-inside
+{
+    position:relative;
+    height:80%;
+    width:90%;
+    margin: 0 auto;
+}
 .container
 {
-
     display:block;
     background: whitesmoke;
     height:80%;
@@ -46,6 +51,7 @@ img
     align-items: top;
     justify-content: right;
 }
+
 .col-6
 {
     margin:10px;

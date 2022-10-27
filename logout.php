@@ -1,8 +1,5 @@
 <?php
-//Запускаем сессию
-    session_start(); 
-    unset($_SESSION['user_id']);
-    unset($_SESSION['role']);
-    unset($_SESSION["login"]);
+    session_unset();
+    session_destroy();
     header('Location:auth.php');
 ?>

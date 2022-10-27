@@ -4,9 +4,6 @@ body, html
     font-size: 14px;
     background-color: black;
 }
-p{
-    margin-right:10px;
-}
 .header {      
     background-color: #fdfdfd;                 
     display:flex;
@@ -69,6 +66,7 @@ color:white;
 
 .content
 {
+    border-radius: 25px;
     display:flex;
     flex-wrap: wrap;
     align-items: center;
@@ -121,8 +119,50 @@ justify-content: center;
     align-items: center;
     justify-content: left;
     width:50%;
+    margin:20px;
 }
 .songs
 {
     width:70%;
 }
+.btn{
+    margin: 20px;
+}
+.find{
+    margin: auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width:100%; 
+}
+.releases
+{
+    text-align: center;
+    display:inline-block;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin:20px;
+    border-radius: 5px;
+}
+.find-form
+{
+    margin-top:10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.find-form input
+{
+    margin-right:10px;
+}
+.menu a
+{
+    margin:5px;
+}
+.info-album img
+{
+    margin:5px;
+}
+
+
+
