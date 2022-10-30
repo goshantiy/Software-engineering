@@ -7,7 +7,7 @@ header('Location:/created/auth.php');
 exit();
 }
 $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link)); 
-$NAME = mysqli_escape_string($link, $_GET["search_field"]);
+$NAME = strip_tags(htmlspecialchars(mysqli_escape_string($link, $_GET["search_field"])));
 if(isset($NAME))
 {   
 $query ="SELECT * FROM `content` WHERE LOWER(song_name) LIKE LOWER ('%$NAME%') OR LOWER(release_name) LIKE LOWER ('%$NAME%') OR LOWER(author) LIKE LOWER ('%$NAME%')";
