@@ -2,6 +2,11 @@
 include 'bdconnect.php';
 if ( !session_id() )
 session_start();
+if(isset($_SESSION['role']))
+{
+    header('Location:/index.php');
+    exit();
+}
 if (isset($_POST['btn_login_form'])) {
     if (trim($_POST['form-login-name']) == '') {
         $errors[] = "Введите логин!";
