@@ -7,10 +7,20 @@ if (!isset($_SESSION['role']))
     exit();
 }
 $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link));
-$NAME = $_GET['release'];
+$NAME = strip_tags(htmlspecialchars(mysqli_escape_string($link,$_GET['release'])));
+if (!isset($NAME))
+{
+    header('Location:/index.php');
+    exit();
+}
 $query = "SELECT * FROM `content` WHERE release_name LIKE '$NAME'";
 $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
-$res = mysqli_fetch_assoc($result)
+$res = mysqli_fetch_assoc($result);
+        if(!isset($res))
+        {
+            header('Location:/index.php');
+            exit();
+        }
 ?>
 <body>
     <div class="content positioner center">
