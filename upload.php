@@ -22,9 +22,9 @@
     }
     if (empty($errors))
     {
-      $uploaddir = '/created/music/author/'.$_POST['form-author'].'/';
-      if (!file_exists("C:/xampp/htdocs/created" . $uploaddir)) {
-      mkdir("C:/xampp/htdocs".$uploaddir,0777,true);
+      $uploaddir = 'music/author/'.$_POST['form-author'].'/';
+      if (!file_exists("C:/xampp/htdocs/created/" . $uploaddir)) {
+      mkdir("C:/xampp/htdocs/created/".$uploaddir,0777,true);
       }
       $coverName=$_FILES['form-cover']['name'];
       if (is_uploaded_file($_FILES['form-cover']['tmp_name'][0])) {
